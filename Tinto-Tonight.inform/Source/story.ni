@@ -18,7 +18,7 @@ The description of Mamfe is "You are based in Mamfe, the capital of the Manyu di
 Acknowledgments are in Mamfe.
 Understand "Acknowledgements" as Acknowledgments.
 The description of Acknowledgments is "This is a work of fiction. The place names are real, but the events and the people are fictional. Any similarity to actual persons, either living or dead, is purely coincidental.
-[line break][line break]The aphorism [italic type]Misadventures often make the best memories[roman type] is taken from:
+[line break][line break]The aphorism, '[italic type]Misadventures often make the best memories[roman type]', is taken from:
 [line break]Gretchen Rubin. 2025. Secrets of Adulthood: Simple Truths for Our Complex Lives.
 [line break]https://multcolib.bibliocommons.com/v2/record/S152C2540808
 [line break][line break]Highlighting of words in descriptions is enabled by 'Keyword Interface', which is an Inform 7 extension by Aaron Reed. It is available at:
@@ -26,7 +26,7 @@ The description of Acknowledgments is "This is a work of fiction. The place name
 ".
 
 Your house is north of Mamfe.
-The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need some food, so you decide to go to [the market]. Your house is on the north edge of Mamfe. It is just a short walk [south] to [the market].
+The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need some food. You should go to [the market]. Your house is on the north edge of Mamfe. It is just a short walk [south] to [the market].
 [otherwise if your house has been visited and the market has not been visited]
 I thought you were going to [the market]?!? It is just a short walk [south] to [the market].
 [otherwise if the market has been visited and the village square has not been visited]Your house is as hot and humid as ever.
@@ -64,7 +64,7 @@ The description of the Kumba road is "
 [if the crossroads is not visited]As always, the small van was crowded with people of all ages. Thankfully, the chickens were placed in the rack on top of the van.
 [line break][line break]Oh, no! A flat tire. This is bad. The taxi does not have a spare. You could wait for someone to return to Mamfe to fix the tire and return. Or you can walk to [Tinto].
 [line break][line break]A car approaches going north to Mamfe. They stop to help. It is [Stefan], the Swiss civil engineer. He offers to take one person and the bad tire [north] to Mamfe. He also has room for you, but he encourages you to continue on to Tinto. He says it is only another 2 km [south] to [the crossroads] and then another 5 km from there to [Tinto].
-[line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be so easy to ride [north] to return home. Or ... you can walk [south]. Regardless, don't dawdle. It is getting late.
+[line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... you can walk [south]. Regardless, don't dawdle. It is getting late.
 [otherwise]It is a rough ride on the unpaved road with ruts in the red clay.
 [line break]Go [north] to [Mamfe] or [south] to [the crossroads].
 [end if]".
@@ -95,13 +95,9 @@ The description of the village square is "A large open space in the middle of th
 [line break][line break][Obasinjom] is dancing in the square.
 [line break][line break][Mr Tabe] tells you that a young woman who cannot bear children has made a request to Obasinjom to be cured."
 
-[I do not want to end the story until I exit the village square,
- but the following line seems to do nothing.]
-[After exiting from the village square:]
-[Instead of exiting from the village square:]
-Every turn when the player is in the village square:
-	say "You are thankful to have seen Obasinjom, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju. You have not seen that type of support in communities to which you belong.";
-	end the story saying "You feel humbled. You came to this country proud, relying on your money and education. However, you have come to realize that relationships and community, generosity and hospitality, are much more powerful forces for good."
+Check going north when player is in the village square:
+	say "You are thankful to have seen Obasinjom, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju. You have not seen that type of support in communities to which you belong.[line break][line break]You feel humbled. You came to this country proud, relying on your money and education. However, you have come to realize that relationships and community, generosity and hospitality, are much more powerful forces for good.";
+	end the story.
 
 Mr Tabe's house is a room.
 It is east of Tinto.
@@ -140,8 +136,13 @@ Obasinjom is in the village square.
 The description of Obasinjom is "Obasinjom is a man wearing a long cloak and a mask. The mask looks like a strange bird with large feathers sticking up on the back of the head, but straw hanging down like hair. The long beak looks like the snout of a crocodile with jagged teeth sticking out."
 
 A crowd is in the village square.
-The description of the crowd is "It seems like the whole village is here, mingling around the edge of the square. Some people are dancing. Some people are drinking. Everyone talks excitedly while they [bold type]wait[roman type] to hear [Obasinjom]'s pronouncement."
+The description of the crowd is "It seems like the whole village is here, mingling around the edge of the square. Some people are dancing. Some people are drinking. Everyone talks excitedly while they wait to hear [Obasinjom]'s pronouncement."
 
 [Expects successful trip to Tinto.]
-Test happy-path with "x acknowledgments / x me / i / n / s / s / x Mr Agbor / e / s / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x crowd /"
+Test happy-path with "x acknowledgments / x me / i / n / s / s / x Mr Agbor / e / s / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x crowd / n"
 
+[Expects failure: player did not take the taxi.]
+Test short-sad-path with "n / s / s / n / n"
+
+[Expects failure: player returned home after flat tire.]
+Test long-sad-path with "s / e / s / n / w / n / n"
