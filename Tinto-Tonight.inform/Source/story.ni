@@ -2,6 +2,8 @@
 
 Include Keyword Interface by Aaron Reed.
 
+Release along with an interpreter.
+
 Use American dialect.
 Use the serial comma.
 
@@ -61,9 +63,9 @@ The Kumba road is a room.
 It is south of the taxi park.
 It is north of the crossroads.
 The description of the Kumba road is "
-[if the crossroads is not visited]As always, the small van was crowded with people of all ages. Thankfully, the chickens were placed in the rack on top of the van.
+[if the crossroads is not visited]As always, the small van is crowded with people of all ages. Thankfully, the chickens were placed in the rack on top of the van.
 [line break][line break]Oh, no! A flat tire. This is bad. The taxi does not have a spare. You could wait for someone to return to Mamfe to fix the tire and return. Or you can walk to [Tinto].
-[line break][line break]A car approaches going north to Mamfe. They stop to help. It is [Stefan], the Swiss civil engineer. He offers to take one person and the bad tire [north] to Mamfe. He also has room for you, but he encourages you to continue on to Tinto. He says it is only another 2 km [south] to [the crossroads] and then another 5 km from there to [Tinto].
+[line break][line break]A car approaches going north to Mamfe. They stop to help. It is [Stefan], the Swiss civil engineer. He offers to take one person and the bad tire [north] to Mamfe. He also has room for you, but he encourages you to walk to Tinto. He says it is only another 2 km [south] to [the crossroads] and then another 5 km from there to [Tinto].
 [line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... you can walk [south]. Regardless, don't dawdle. It is getting late.
 [otherwise]It is a rough ride on the unpaved road with ruts in the red clay.
 [line break]Go [north] to [Mamfe] or [south] to [the crossroads].
@@ -77,12 +79,12 @@ Tinto, The village square, Mr Tabe's house, the road to Tali, and the crossroads
 the crossroads is a room.
 It is south of the Kumba road.
 It is west of the road to Tali.
-The description of the crossroads is "This is where the road to Tali starts from the road to Kumba. There is nothing here at the crossroads. It is just a place along the Mamfe-Kumba road where the bush taxis drop people off to trek to villages to the [east]. Go [north] to return to [Mamfe]."
+The description of the crossroads is "This is where the road to Tali branches from the road to Kumba. There is nothing here at the crossroads. It is just a place along the Mamfe-Kumba road where the bush taxis drop people off to trek to villages to the [east]. Go [north] to return to [Mamfe]."
 
 The road to Tali is a room.
 It is east of the crossroads.
 It is north of Tinto.
-The description of the road to Tali is "A narrow dirt road with large ruts in some places. Most seasons, it gets graded after the rainy season, so it is relatively easy to travel most of the year. The forest is tall and dense along the sides of the road, except for the areas that have been cleared for houses. [Tinto] is mostly on the [south] side of the road. Or return [west] to the [crossroads]."
+The description of the road to Tali is "A narrow dirt road with large ruts in some places. Most seasons, it gets graded after the rainy season, so it is relatively easy to travel most of the year. The forest is tall and dense along the sides of the road, except for the areas that have been cleared for houses. Most of the houses in [Tinto] are on the [south] side of the road. Or return [west] to the [crossroads]."
 
 Tinto is a room.
 It is south of the road to Tali.
