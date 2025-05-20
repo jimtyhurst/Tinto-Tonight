@@ -1,8 +1,8 @@
 "Tinto Tonight" by Jim Tyhurst
 
-Include Basic Screen Effects by Emily Short.
 Include Keyword Interface by Aaron Reed.
-
+Include Basic Screen Effects by Emily Short.
+Include Modified Exit by Emily Short.
 
 Release along with an interpreter.
 
@@ -36,7 +36,8 @@ The description of Acknowledgments is "This is a work of fiction. The place name
 [line break]https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
 ".
 
-Your house is north of Mamfe.
+Your house is a room.
+It is north of Mamfe.
 The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need some food. It is just a short walk [south] to [the market].
 [otherwise if your house has been visited and the market has not been visited]
 I thought you were going to [the market]?!? It is just a short walk [south] to [the market].
@@ -65,6 +66,16 @@ The description of the taxi park is "There are only a couple bush taxis at this 
 [line break][line break]Most taxis leave in the morning, so you are lucky to catch one in the afternoon: You find a taxi named 'Big Boss' that is leaving as soon as they get one more passenger. You can be that passenger, but you are still hesitant.
 [otherwise]You see a taxi named 'Mama Okang'. You wonder if there is any research on the variety of names given to bush taxis.
 [end if]".
+
+In the taxi park is a vehicle called a bush taxi.
+
+[
+TODO: I want the player to get in the taxi implicitly when going south from the taxi park ... but this If clause does not match when I think it should, so the Try statement is not executed when I want it to.
+]
+Before going south:
+	If player is not inside a taxi:
+		Say "Player is not inside the taxi."; [DEBUG]
+		Try entering the bush taxi.
 
 Section 2 - Outside the taxi park
 
