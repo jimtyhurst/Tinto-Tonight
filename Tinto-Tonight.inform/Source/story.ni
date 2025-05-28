@@ -1,21 +1,37 @@
 "Tinto Tonight" by Jim Tyhurst
 
-Include Keyword Interface by Aaron Reed.
-Include Basic Screen Effects by Emily Short.
-Include Modified Exit by Emily Short.
-
-Release along with an interpreter.
-
-Use the serial comma.
-
-When play begins:
-	say "[italic type]Misadventures often make the best memories[roman type].".
-
 [
 Copyright (c) 2025 Jim Tyhurst (https://jimtyhurst.com)
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. (http://creativecommons.org/licenses/by-nc-sa/4.0/)
 ]
+
+[Built-in to Inform]
+Include Basic Screen Effects by Emily Short.
+
+[https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x]
+Include Modified Exit by Emily Short.
+
+[https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x]
+Include Keyword Interface by Aaron Reed.
+
+Release along with an interpreter.
+[After release, you need to update 'interpeter/glkote.css' manually, in order for the 'Keyword Interface' to display correctly in a browser. Replace the empty definitions for these two styles that appear at the end of the file:
+	/* things */
+	.Style_user1 {
+	  color: #000fff; /* Blue */
+	}
+	
+	/* compass directions */
+	.Style_user2 {
+	  color: #008000; /* Green */
+	}
+]
+
+Use the serial comma.
+
+When play begins:
+	say "[italic type]Whenever we choose one path, we must forgo other paths, so any choice may bring unavoidable regret. - Gretchen Rubin[roman type].".
 
 Chapter 1 - Setting
 
@@ -29,11 +45,13 @@ Acknowledgments are in Mamfe.
 Understand "Acknowledgements" as Acknowledgments.
 The description of Acknowledgments is "This is a work of fiction. The place names are real, but the events and the people are fictional. Any similarity to actual persons, either living or dead, is purely coincidental.
 [line break][line break]Source code: https://github.com/jimtyhurst/Tinto-Tonight
-[line break][line break]The aphorism, '[italic type]Misadventures often make the best memories[roman type]', is taken from:
+[line break][line break]The aphorism, '[italic type]Whenever we choose one path, we must forgo other paths, so any choice may bring unavoidable regret.[roman type]', is taken from:
 [line break]Gretchen Rubin. 2025. Secrets of Adulthood: Simple Truths for Our Complex Lives.
 [line break]https://multcolib.bibliocommons.com/v2/record/S152C2540808
-[line break][line break]Highlighting of words in descriptions is enabled by 'Keyword Interface', which is an Inform 7 extension by Aaron Reed. It is available at:
-[line break]https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
+[line break][line break][bold type]Extensions[roman type]
+[line break]Keyword Interface by Aaron Reed. https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
+[line break]Basic Screen Effects by Emily Short. Installed Extension.
+[line break]Modified Exit by Emily Short. Installed Extension.
 ".
 
 Your house is a room.
@@ -56,41 +74,61 @@ The description of the market is
 "A typical West African market. There are many small vendors, where each one sells one thing, like beans, rice, local vegetables, or dried fish. [The taxi park] is to the [east]. [Mamfe] town is to the [north].
 [if the market has not been visited]
 [line break][line break]You meet [Mr Agbor], the Rural Councillor, who always asks about your work. You are delighted when he tells you there will be an Obasinjom ceremony at Tinto [italic type]tonight[roman type]. Tonight!?!
-[line break][line break]You hesitate ... Can you get to Tinto before nightfall? [Mr Agbor] encourages you to go to the taxi park immediately. But you do not have any extra clothes with you. There is no time to go back home to pick up anything. Anyway, it seems a little risky; a little scary even. You hate making decisions like this at the spur of the moment! What are you going to do? ... go home? ... go to Tinto?
+[line break][line break]You hesitate ... Can you get to Tinto before nightfall? [Mr Agbor] encourages you to go to the taxi park immediately. But you do not have any extra clothes with you. There is no time to go back home to pick up anything. Anyway, it seems a little risky; a little scary even. You hate making decisions like this at the spur of the moment! What are you going to do? ... go [north] to go home? ... go [east] to go to Tinto?
 [end if]".
+
+[Removes Mr Agbor after first visit to the market.]
+After going east:
+	If Mr Agbor is in the market and the player is in the taxi park:
+		Now Mr Agbor is off-stage;
+	Continue the action.
+After going north:
+	If Mr Agbor is in the market and the player is in Mamfe:
+		Now Mr Agbor is off-stage;
+	Continue the action.
 
 The taxi park is a room.
 It is east of the market.
-The description of the taxi park is "There are only a couple bush taxis at this time of day. They go [south] on [the Kumba road] or you can return [west] to [the market].
+The description of the taxi park is "There are only a couple bush taxis at this time of day.
+Go [south] on [the Kumba road] or return [west] to [the market].
 [if the taxi park has not been visited]
-[line break][line break]Most taxis leave in the morning, so you are lucky to catch one in the afternoon: You find a taxi named 'Big Boss' that is leaving as soon as they get one more passenger. You can be that passenger, but you are still hesitant.
-[otherwise]You see a taxi named 'Mama Okang'. You wonder if there is any research on the variety of names given to bush taxis.
+[line break][line break]Most taxis leave in the morning, so you are lucky to catch one in the afternoon: You find a taxi named [bold type]Big Boss[roman type] that is leaving as soon as they get one more passenger. You can be that passenger! You still hesitate, not sure if you really want to go. Come on ... [bold type]Get in the taxi[roman type] and head [south]!
+[otherwise]You see a taxi named [bold type]Mama Okang[roman type]. You wonder if there is any research on the types of names given to bush taxis.
 [end if]".
 
-In the taxi park is a vehicle called a bush taxi.
+The bush taxi is a vehicle in the taxi park.
+The description of the bush taxi is "As always, the taxi is overloaded, which makes you worry about the safety of this type of travel. However, it always makes you smile to see live animals tied on top!"
+Understand "Big Boss" as the bush taxi.
+Understand "Mama Okong" as the bush taxi.
 
-[
-TODO: I want the player to get in the taxi implicitly when going south from the taxi park ... but this If clause does not match when I think it should, so the Try statement is not executed when I want it to.
-]
-Before going south:
-	If player is not inside a taxi:
-		Say "Player is not inside the taxi."; [DEBUG]
-		Try entering the bush taxi.
+[Player is put in the taxi automatically when they go south from the taxi park.]
+Check going south:
+	If player is in the taxi park and the bush taxi is in the taxi park and player is not in the bush taxi:
+		Try entering the bush taxi;
+		Try going south instead.
+
+Check going north:
+	If player is in Outside The Taxi Park and the bush taxi is in Outside The Taxi Park and player is not in the bush taxi:
+		Now a bush taxi is in the taxi park.
 
 Section 2 - Outside the taxi park
 
 outside the taxi park is a room.
 It is south of the taxi park.
 The description of outside the taxi park is "[first time]As always, the small van is crowded with people of all ages. Thankfully, the chickens were placed in the rack on top of the van.
-[only]It is a rough ride on the unpaved road with ruts in the red clay.
+[only]It is a rough ride on the unpaved road with deep ruts in the red clay.
 [line break][line break]Go [north] to [Mamfe] or [south] to the crossroads."
 
 Section 3 - Bachuo Ntai
 
 Bachuo Ntai is a room.
 It is south of outside the taxi park.
-The description of Bachuo Ntai is "[one of]The taxi stops in Bachuo Ntai to drop off a passenger and their cargo. You notice that you are stopped across from the Ekpe Society hall, which has a [leopard pelt] above the door.
-[or]Go [north] to return home or [south] to the crossroads.[stopping]".
+The description of Bachuo Ntai is "The taxi stops in Bachuo Ntai to drop off a passenger and their cargo. You notice that you are stopped across from the [Ekpe Society Hall], which has a [leopard pelt] above the door.
+[line break][line break]Go [north] to return home or [south] to the crossroads.".
+
+The Ekpe Society Hall is a thing in Bachuo Ntai.
+The Ekpe Society Hall is fixed in place.
+The description of the Ekpe Society Hall is "The Ekpe Society is a secret society that provides some governance structure and justice in Banyang villages. Their power is derived from a spirit in the forest, which is somehow related to a leopard. You once saw an Ekpe ceremony in which the men wore red hats and carried a something like a stretcher with a covered box on top. There was a noise coming from the inside, like the yowling or roaring of a leopard."
 
 A magic-infused artifact is a kind of thing.
 A magic-infused artifact can be either wearable or not wearable.
@@ -105,7 +143,8 @@ After dropping courage:
 	now the courage is off-stage.
 
 [
-TODO: This 'Instead of wearing' rule does not work ... "wear pelt" drops into the 'Instead of taking' rule, whereas I want this particular text displayed when someone tries to wear the leopard pelt.
+TODO: This 'Instead of wearing' rule does not work ... "wear pelt" drops into the 'Instead of taking' rule, whereas I want this particular text displayed when someone tries to wear the leopard pelt. I also tried this as a 'Check wearing' rule, but that has the same problem.
+I need this rule to apply before the "can't wear what's not held rule", but I do not know how to do that.
 ]
 Instead of wearing the leopard pelt:
 	Say "Everyone knows there is a lot of magic in that pelt. As an outsider, you should not be trying to wear it."
@@ -113,6 +152,21 @@ Instead of wearing the leopard pelt:
 Instead of an actor taking a leopard pelt:
 	Say "You reach out and touch the leopard pelt. You feel a strange tingling sensation ... You feel a boost of courage!";
 	Now the player has courage instead.
+
+Instead of an actor touching a leopard pelt:
+	Say "You reach out and touch the leopard pelt. You feel a strange tingling sensation ... You feel a boost of courage!";
+	Now the player has courage instead.
+
+[Player is put in the taxi automatically when they go south from the taxi park.]
+Check going south:
+	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
+		Try entering the bush taxi;
+		Try going south instead.
+
+Check going north:
+	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
+		Try entering the bush taxi;
+		Try going north instead.
 
 Section 4 - The road to Kumba
 
@@ -123,7 +177,23 @@ The description of the road to Kumba is "[one of]Oh, no! A flat tire. This is ba
 [line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... you can walk [south]. Regardless, don't dawdle. It is getting late.
 [or]Go [north] to return home or [south] to the crossroads.[stopping]"
 
-After exiting when the container exited from is the road to Kumba, remove Stefan from play.
+[Player is taken out of the taxi automatically when they go south from the road to Kumba.]
+Check going south:
+	If player is in the road to Kumba and the bush taxi is in the road to Kumba and player is in the bush taxi:
+		Say "You need to walk from here.";
+		Try exiting;
+		Say "You walk alone, leaving the taxi behind.";
+		Try going south instead.
+
+[Removes Stefan after first visit to the road to Kumba.]
+After going south:
+	If Stefan is in the road to Kumba and player is in the crossroads:
+		Now Stefan is off-stage;
+	Continue the action.
+After going north:
+	If Stefan is in the road to Kumba and player is in Bachuo Ntai:
+		Now Stefan is off-stage;
+	Continue the action.
 
 Section 5 - The crossroads
 
@@ -225,4 +295,4 @@ Test long-sad-path with "s / e / s / n / w / n / n"
 Test pelt with "s / e / s / s / x pelt / take pelt / i"
 
 [Navigates to Bachuo Ntai]
-Test Bachuo-Ntai with "s / e / s / s"
+Test BN with "s / e / s / s"
