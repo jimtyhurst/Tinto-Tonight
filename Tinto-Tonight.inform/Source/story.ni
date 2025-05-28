@@ -38,7 +38,7 @@ Chapter 1 - Setting
 Section 1 - Mamfe
 
 Mamfe is a room.
-The description of Mamfe is "[first time]You have been in Cameroon for six months. You are making great progress with your ethnographic studies. Last week, you were lucky to see a ceremony of the Ekpe Society, i.e. Leopard Society, in Buchuo Ntai. You are still hoping to see an Obasinjom ceremony, but they seem to be fairly rare. However, this week you were happy to meet a few people who are willing to tell you about their spirit animals. Most people are [italic type]not[roman type] willing to talk about such personal matters with outsiders, but you have made a few friends, which has opened a few opportunities for you.
+The description of Mamfe is "[first time]You have been in Cameroon for six months. You are making great progress with your ethnographic studies. You are still hoping to see an Obasinjom ceremony, but they seem to be fairly rare. However, this week you were happy to meet a few people who are willing to tell you about their spirit animals.
 [line break][line break]You are based in Mamfe, the capital of the Manyu Division in the Southwest Province. It feels very crowded for a town of only 40,000 people. You prefer to work in the field, talking to people in the small rural villages, but you come back here to get supplies and to get your mail.[line break][line break][only]The market is on the [south] edge of town. Your house is on the [north] edge of town."
 
 Acknowledgments are in Mamfe.
@@ -51,12 +51,12 @@ The description of Acknowledgments is "This is a work of fiction. The place name
 [line break][line break][bold type]Extensions[roman type]
 [line break]Keyword Interface by Aaron Reed. https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
 [line break]Basic Screen Effects by Emily Short. Installed Extension.
-[line break]Modified Exit by Emily Short. Installed Extension.
+[line break]Modified Exit by Emily Short. Installed Extension. https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x
 ".
 
 Your house is a room.
 It is north of Mamfe.
-The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need some food. It is just a short walk [south] to [the market].
+The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need to get back to visiting villages. Most people are [italic type]not[roman type] willing to talk about personal beliefs with outsiders like you, but you have made a few friends, which has opened a few opportunities. Right now you need some food. It is just a short walk [south] to [the market].
 [otherwise if your house has been visited and the market has not been visited]
 I thought you were going to [the market]?!? It is just a short walk [south] to [the market].
 [otherwise if the market has been visited and the village square has not been visited]Your house is as hot and humid as ever.
@@ -128,7 +128,7 @@ The description of Bachuo Ntai is "The taxi stops in Bachuo Ntai to drop off a p
 
 The Ekpe Society Hall is a thing in Bachuo Ntai.
 The Ekpe Society Hall is fixed in place.
-The description of the Ekpe Society Hall is "The Ekpe Society is a secret society that provides some governance structure and justice in Banyang villages. Their power is derived from a spirit in the forest, which is somehow related to a leopard. You once saw an Ekpe ceremony in which the men wore red hats and carried a something like a stretcher with a covered box on top. There was a noise coming from the inside, like the yowling or roaring of a leopard."
+The description of the Ekpe Society Hall is "The Ekpe Society, i.e. Leopard Society, is a secret society that provides some governance structure and justice in Banyang villages. Their power is derived from a spirit in the forest, which is somehow related to a leopard. Last week, you were lucky to see one of their ceremonies. The men wore red hats and carried something like a stretcher with a covered box on top. They carried it around the village while drumming and dancing. There was a noise coming from the inside, like the yowling or roaring of a leopard."
 
 A magic-infused artifact is a kind of thing.
 A magic-infused artifact can be either wearable or not wearable.
@@ -174,7 +174,7 @@ the road to Kumba is a room.
 It is south of Bachuo Ntai.
 The description of the road to Kumba is "[one of]Oh, no! A flat tire. This is bad. The taxi does not have a spare. You could wait for someone to return to Mamfe to fix the tire and return. Or you can walk to [Tinto].
 [line break][line break]A car approaches going north to Mamfe. They stop to help. It is [Stefan], the Swiss civil engineer. He offers to take one person and the bad tire [north] to Mamfe. He also has room for you, but he encourages you to walk to Tinto. He says it is only another 2 km [south] to [the crossroads] and then another 5 km from there to [Tinto].
-[line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... you can walk [south]. Regardless, don't dawdle. It is getting late.
+[line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... [bold type]exit the taxi[roman type] and walk [south]. Regardless, don't dawdle. It is getting late.
 [or]Go [north] to return home or [south] to the crossroads.[stopping]"
 
 [Player is taken out of the taxi automatically when they go south from the road to Kumba.]
@@ -189,6 +189,8 @@ Check going south:
 After going south:
 	If Stefan is in the road to Kumba and player is in the crossroads:
 		Now Stefan is off-stage;
+	If player is in the crossroads and the bush taxi is in the crossroads and player is in the bush taxi:
+		Try exiting;
 	Continue the action.
 After going north:
 	If Stefan is in the road to Kumba and player is in Bachuo Ntai:
@@ -215,10 +217,10 @@ Tinto is a room.
 It is south of the road to Tali.
 The description of Tinto is "Tinto is a small village, stretched out along the road to Tali. You hear a lot of noise coming from [the village square] on the [south] edge of the village. [The road to Tali] is to the [north]. [Mr Tabe's house] is at the [east] end of the village."
 
-village square is a room. It is south of Tinto.
+the village square is a room. It is south of Tinto.
 The description of the village square is "A large open space in the middle of the village where everyone gathers for meetings and special events. Most of the houses in the village are to the [north] of the square.
 [line break][line break][Obasinjom] is dancing in the square.
-[line break][line break][Mr Tabe] tells you that a young woman who cannot bear children has made a request to Obasinjom to be cured."
+[line break][line break]An elder tells you that a young woman who cannot bear children has made a request to Obasinjom to be cured."
 
 Check going north when player is in the village square:
 	say "You are thankful to have seen Obasinjom, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju. You have not seen that type of support in communities to which you belong.[line break][line break]You feel humbled. You came to this country proud, relying on your money and education. However, you have come to realize that relationships and community, generosity and hospitality, are much more powerful forces for good.";
