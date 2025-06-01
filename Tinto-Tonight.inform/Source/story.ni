@@ -17,42 +17,36 @@ Include Keyword Interface by Aaron Reed.
 
 Release along with an interpreter.
 [After release, you need to update 'interpeter/glkote.css' manually, in order for the 'Keyword Interface' to display correctly in a browser. Replace the empty definitions for these two styles that appear at the end of the file:
-	/* things */
-	.Style_user1 {
-	  color: #000fff; /* Blue */
-	}
+```
+/* things */
+.Style_user1 {
+	color: #000fff; /* Blue */
+}
 	
-	/* compass directions */
-	.Style_user2 {
-	  color: #008000; /* Green */
-	}
+/* compass directions */
+.Style_user2 {
+	color: #008000; /* Green */
+}
+```
 ]
 
 Use the serial comma.
 
 When play begins:
-	say "[italic type]Whenever we choose one path, we must forgo other paths, so any choice may bring unavoidable regret. - Gretchen Rubin[roman type].".
+	say "'[italic type]Whenever we choose one path,[line break]we must forgo other paths,[line break]so any choice may bring unavoidable regret.'[line break]- Gretchen Rubin[roman type][line break]".
 
 Chapter 1 - Setting
 
-Section 1 - Mamfe
+Section 1 - Cameroon
+
+Cameroon is a room.
+The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[line break][line break]Start your adventure in the [southwest] province."
+
+Section 2 - Mamfe
 
 Mamfe is a room.
-The description of Mamfe is "[first time]You have been in Cameroon for six months. You are making great progress with your ethnographic studies. You are still hoping to see an Obasinjom ceremony, but they seem to be fairly rare. However, this week you were happy to meet a few people who are willing to tell you about their spirit animals.
-[line break][line break]You are based in Mamfe, the capital of the Manyu Division in the Southwest Province. It feels very crowded for a town of only 40,000 people. You prefer to work in the field, talking to people in the small rural villages, but you come back here to get supplies and to get your mail.[line break][line break][only]The market is on the [south] edge of town. Your house is on the [north] edge of town."
-
-Acknowledgments are in Mamfe.
-Understand "Acknowledgements" as Acknowledgments.
-The description of Acknowledgments is "This is a work of fiction. The place names are real, but the events and the people are fictional. Any similarity to actual persons, either living or dead, is purely coincidental.
-[line break][line break]Source code: https://github.com/jimtyhurst/Tinto-Tonight
-[line break][line break]The aphorism, '[italic type]Whenever we choose one path, we must forgo other paths, so any choice may bring unavoidable regret.[roman type]', is taken from:
-[line break]Gretchen Rubin. 2025. Secrets of Adulthood: Simple Truths for Our Complex Lives.
-[line break]https://multcolib.bibliocommons.com/v2/record/S152C2540808
-[line break][line break][bold type]Extensions[roman type]
-[line break]Keyword Interface by Aaron Reed. https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
-[line break]Basic Screen Effects by Emily Short. Installed Extension.
-[line break]Modified Exit by Emily Short. Installed Extension. https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x
-".
+Mamfe is southwest of Cameroon.
+The description of Mamfe is "Your home base is Mamfe, the capital of the Manyu Division in the Southwest Province. It feels very crowded for a town of only 40,000 people. You prefer your work in the field, talking to people in the small rural villages. You come back here to get supplies and to get your mail.[line break][line break]Your house is on the [north] edge of town. The market is on the [south] edge of town."
 
 Your house is a room.
 It is north of Mamfe.
@@ -63,10 +57,12 @@ I thought you were going to [the market]?!? It is just a short walk [south] to [
 [otherwise if the village square has been visited]Welcome home! You were finally able to see Obasinjom.
 [end if]".
 
-Every turn when the player is in your house:
-	If the market has been visited and the village square has not been visited:
-		say "It is frustrating that you could not see Obasinjom. You wonder whether a spirit animal could help you next time.";
-		end the story.
+The kitchen shelf is a container in your house.
+The description of the kitchen shelf is "Unfortunately, there is not much here."
+
+A Chococam chocolate bar is an edible thing in the kitchen shelf.
+The description of the chocolate bar is "Not as good quality chocolate as you used to buy in Cambridge, but in addition to supporting the local economy, it is delightful to have a snack that you do not need to cook, especially since your 13 kg butane tank is nearly empty!"
+Report eating the Chococam chocolate bar: say "You need to buy another box of these next time you go to the market!"
 
 The market is a room.
 It is south of Mamfe.
@@ -74,18 +70,8 @@ The description of the market is
 "A typical West African market. There are many small vendors, where each one sells one thing, like beans, rice, local vegetables, or dried fish. [The taxi park] is to the [east]. [Mamfe] town is to the [north].
 [if the market has not been visited]
 [line break][line break]You meet [Mr Agbor], the Rural Councillor, who always asks about your work. You are delighted when he tells you there will be an Obasinjom ceremony at Tinto [italic type]tonight[roman type]. Tonight!?!
-[line break][line break]You hesitate ... Can you get to Tinto before nightfall? [Mr Agbor] encourages you to go to the taxi park immediately. But you do not have any extra clothes with you. There is no time to go back home to pick up anything. Anyway, it seems a little risky; a little scary even. You hate making decisions like this at the spur of the moment! What are you going to do? ... go [north] to go home? ... go [east] to go to Tinto?
+[line break][line break]You hesitate ... Can you get to Tinto before nightfall? [Mr Agbor] encourages you to go to the taxi park immediately. But you do not have any extra clothes with you. There is no time to go back home to pick up anything. Anyway, it seems a little risky; a little scary even. You hate making decisions like this at the spur of the moment! What are you going to do? ... go [east] to go to Tinto? ... go [north] to go home?
 [end if]".
-
-[Removes Mr Agbor after first visit to the market.]
-After going east:
-	If Mr Agbor is in the market and the player is in the taxi park:
-		Now Mr Agbor is off-stage;
-	Continue the action.
-After going north:
-	If Mr Agbor is in the market and the player is in Mamfe:
-		Now Mr Agbor is off-stage;
-	Continue the action.
 
 The taxi park is a room.
 It is east of the market.
@@ -101,17 +87,7 @@ The description of the bush taxi is "As always, the taxi is overloaded, which ma
 Understand "Big Boss" as the bush taxi.
 Understand "Mama Okong" as the bush taxi.
 
-[Player is put in the taxi automatically when they go south from the taxi park.]
-Check going south:
-	If player is in the taxi park and the bush taxi is in the taxi park and player is not in the bush taxi:
-		Try entering the bush taxi;
-		Try going south instead.
-
-Check going north:
-	If player is in Outside The Taxi Park and the bush taxi is in Outside The Taxi Park and player is not in the bush taxi:
-		Now a bush taxi is in the taxi park.
-
-Section 2 - Outside the taxi park
+Section 3 - Outside the taxi park
 
 outside the taxi park is a room.
 It is south of the taxi park.
@@ -119,7 +95,7 @@ The description of outside the taxi park is "[first time]As always, the small va
 [only]It is a rough ride on the unpaved road with deep ruts in the red clay.
 [line break][line break]Go [north] to [Mamfe] or [south] to the crossroads."
 
-Section 3 - Bachuo Ntai
+Section 4 - Bachuo Ntai
 
 Bachuo Ntai is a room.
 It is south of outside the taxi park.
@@ -157,18 +133,7 @@ Instead of an actor touching a leopard pelt:
 	Say "You reach out and touch the leopard pelt. You feel a strange tingling sensation ... You feel a boost of courage!";
 	Now the player has courage instead.
 
-[Player is put in the taxi automatically when they go south from the taxi park.]
-Check going south:
-	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
-		Try entering the bush taxi;
-		Try going south instead.
-
-Check going north:
-	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
-		Try entering the bush taxi;
-		Try going north instead.
-
-Section 4 - The road to Kumba
+Section 5 - The road to Kumba
 
 the road to Kumba is a room.
 It is south of Bachuo Ntai.
@@ -177,45 +142,25 @@ The description of the road to Kumba is "[one of]Oh, no! A flat tire. This is ba
 [line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... [bold type]exit the taxi[roman type] and walk [south]. Regardless, don't dawdle. It is getting late.
 [or]Go [north] to return home or [south] to the crossroads.[stopping]"
 
-[Player is taken out of the taxi automatically when they go south from the road to Kumba.]
-Check going south:
-	If player is in the road to Kumba and the bush taxi is in the road to Kumba and player is in the bush taxi:
-		Say "You need to walk from here.";
-		Try exiting;
-		Say "You walk alone, leaving the taxi behind.";
-		Try going south instead.
-
-[Removes Stefan after first visit to the road to Kumba.]
-After going south:
-	If Stefan is in the road to Kumba and player is in the crossroads:
-		Now Stefan is off-stage;
-	If player is in the crossroads and the bush taxi is in the crossroads and player is in the bush taxi:
-		Try exiting;
-	Continue the action.
-After going north:
-	If Stefan is in the road to Kumba and player is in Bachuo Ntai:
-		Now Stefan is off-stage;
-	Continue the action.
-
-Section 5 - The crossroads
+Section 6 - The crossroads
 
 the crossroads is a room.
 It is south of the road to Kumba.
 It is west of the road to Tali.
 The description of the crossroads is "This is where the road to Tali branches from the road to Kumba. There is nothing here at the crossroads. It is just a place along the Mamfe-Kumba road where the bush taxis drop people off to trek to villages to the [east]. Go [north] to return to [Mamfe]."
 
-Section 6 - The road to Tali
+Section 7 - The road to Tali
 
 The road to Tali is a room.
 It is east of the crossroads.
 It is north of Tinto.
 The description of the road to Tali is "A narrow dirt road with large ruts in some places. Most seasons, it gets graded after the rainy season, so it is relatively easy to travel most of the year. The forest is tall and dense along the sides of the road, except for the areas that have been cleared for houses. Most of the houses in [Tinto] are on the [south] side of the road. Or return [west] to the [crossroads]."
 
-Section 7 - Tinto
+Section 8 - Tinto
 
 Tinto is a room.
 It is south of the road to Tali.
-The description of Tinto is "Tinto is a small village, stretched out along the road to Tali. You hear a lot of noise coming from [the village square] on the [south] edge of the village. [The road to Tali] is to the [north]. [Mr Tabe's house] is at the [east] end of the village."
+The description of Tinto is "Tinto is a small village, stretched out along the road to Tali. You hear a lot of noise coming from [the village square] on the [south] edge of the village. [Mr Tabe's house] is at the [east] end of the village. [The road to Tali] is to the [north]."
 
 the village square is a room. It is south of Tinto.
 The description of the village square is "A large open space in the middle of the village where everyone gathers for meetings and special events. Most of the houses in the village are to the [north] of the square.
@@ -228,9 +173,9 @@ Check going north when player is in the village square:
 
 Mr Tabe's house is a room.
 It is east of Tinto.
-The description of Mr Tabe's house is "A concrete house with a tole roof. There is an empty room where guests can sleep. The main part of Tinto is [west] of here. Mr Tabe has offered to let you sleep there tonight."
+The description of Mr Tabe's house is "A concrete house with a tole roof. There is an empty room where guests can sleep. Mr Tabe has offered to let you sleep there tonight. The main part of Tinto is [west] of here."
 
-Section 8 - The forest
+Section 9 - The forest
 
 The Forest is a region.
 Tinto, The village square, Mr Tabe's house, the road to Tali, and the crossroads are in the Forest.
@@ -269,7 +214,7 @@ The description of Stefan is "Stefan is a Swiss civil engineer, working with Hel
 Section 4 - Mr Tabe
 
 Mr Tabe is a man in Tinto.
-The description of Mr Tabe is "Mr Tabe is one of the village elders. You met him a few months ago on a previous trip to Tinto. He greets you warmly, but he urges you to hurry along to [the village square], where [Obasinjom] has already started dancing."
+The description of Mr Tabe is "Mr Tabe is one of the village elders. You met him a few months ago on a previous trip to Tinto. He greets you warmly, but he urges you to hurry along [south] to [the village square], where [Obasinjom] has already started dancing."
 
 Section 5 - Obasinjom
 
@@ -282,7 +227,74 @@ Section 6 - A crowd
 A crowd is in the village square.
 The description of the crowd is "It seems like the whole village is here, mingling around the edge of the square. Some people are dancing. Some people are drinking. Everyone talks excitedly while they wait to hear [Obasinjom]'s pronouncement."
 
-Chapter 3 - Tests
+Chapter 3 - Rules
+
+Every turn when the player is in your house:
+	If the market has been visited and the village square has not been visited:
+		say "It is frustrating that you could not see Obasinjom. You wonder whether a spirit animal could help you next time.";
+		end the story.
+
+Before going north:
+	If player is in Outside The Taxi Park and the bush taxi is not in The Taxi Park and player is not in the bush taxi:
+		Now a bush taxi is in the taxi park;
+	Continue the action.
+
+After going north:
+	If Mr Agbor is in the market and the player is in Mamfe:
+		Now Mr Agbor is off-stage;
+	If Stefan is in the road to Kumba and the player is in Bachuo Ntai:
+		Now Stefan is off-stage;
+	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
+		Try entering the bush taxi;
+		Try going north instead;
+	Continue the action.
+
+After going east:
+	If Mr Agbor is in the market and the player is in the taxi park:
+		Now Mr Agbor is off-stage;
+	Continue the action.
+
+Check going south:
+	If player is in the taxi park and the bush taxi is in the taxi park and player is not in the bush taxi:
+		Try entering the bush taxi;
+		Try going south instead;
+	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
+		Try entering the bush taxi;
+		Try going south instead;
+	If player is in the road to Kumba and the bush taxi is in the road to Kumba and player is in the bush taxi:
+		Say "You need to walk from here.";
+		Try exiting;
+		Say "You walk alone, leaving the taxi behind.";
+		Try going south instead;
+	Continue the action.
+
+After going south:
+	If Stefan is in the road to Kumba and the player is in the crossroads:
+		Now Stefan is off-stage;
+	Continue the action.
+
+Chapter 4 - Acknowledgments
+
+Acknowledgments are in Cameroon.
+Understand "Acknowledgements" as Acknowledgments.
+The description of Acknowledgments is "[bold type]Disclaimer[roman type]
+[line break]This story is a work of fiction. References to actual villages, towns, and cities are used fictiously. Other names, characters, places, and events are products of the author's imagination. Any resemblance to actual events or places or persons, living or dead, is entirely coincidental.
+[line break][line break][bold type]Source Code[roman type]
+[line break]https://github.com/jimtyhurst/Tinto-Tonight
+[line break][line break][bold type]References[roman type]
+[line break]The aphorism, '[italic type]Whenever we choose one path, we must forgo other paths, so any choice may bring unavoidable regret.[roman type]', is taken from:
+[line break]Gretchen Rubin. 2025. Secrets of Adulthood: Simple Truths for Our Complex Lives.
+[line break]https://multcolib.bibliocommons.com/v2/record/S152C2540808
+[line break][line break]Keyword Interface by Aaron Reed. https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
+[line break][line break]Basic Screen Effects by Emily Short. Installed Extension.
+[line break][line break]Modified Exit by Emily Short. https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x
+[line break][line break][bold type]Thanks[roman type]
+[line break]This story was written while taking the course CS 410 Topics in Interactive Fiction at Portland State University.
+[line break][line break]https://docs.google.com/document/d/e/2PACX-1vQ9mYZtYJteghqAVQTyvXn0Gimd-K3Pt9M8J64DMvtQua21kJR4w47wzaNC-rAfGMr1Q_eyVyOAf4fJ/pub
+[line break][line break]Many thanks to the professors and other students for offering helpful advice and criticism as I was writing the story. I am still not completely happy with it, but it is [italic type]much[roman type] better than it would have been without their help.
+".
+
+Chapter 5 - Tests
 
 [Expects successful trip to Tinto.]
 Test happy-path with "x acknowledgments / x me / i / n / s / s / x Mr Agbor / e / s / s / s / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x crowd / n"
