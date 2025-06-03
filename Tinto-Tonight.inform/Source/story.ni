@@ -6,8 +6,11 @@ Copyright (c) 2025 Jim Tyhurst (https://jimtyhurst.com)
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. (http://creativecommons.org/licenses/by-nc-sa/4.0/)
 ]
 
+The release number is 1. The story creation year is 2025.
+
 [Built-in to Inform]
 Include Basic Screen Effects by Emily Short.
+Include Glulx Text Effects by Emily Short.
 
 [https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x]
 Include Modified Exit by Emily Short.
@@ -15,7 +18,12 @@ Include Modified Exit by Emily Short.
 [https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x]
 Include Keyword Interface by Aaron Reed.
 
-Release along with an interpreter.
+Table of User Styles (continued)
+style name	color
+special-style-1	"#000fff" [ blue ]
+special-style-2	"#008000" [ green ]
+
+Release along with an interpreter, the library card, the introductory booklet, the introductory postcard, and the source text.
 [After release, you need to update 'interpeter/glkote.css' manually, in order for the 'Keyword Interface' to display correctly in a browser. Replace the empty definitions for these two styles that appear at the end of the file:
 ```
 /* things */
@@ -165,10 +173,15 @@ The description of Tinto is "Tinto is a small village, stretched out along the r
 the village square is a room. It is south of Tinto.
 The description of the village square is "A large open space in the middle of the village where everyone gathers for meetings and special events. Most of the houses in the village are to the [north] of the square.
 [line break][line break][Obasinjom] is dancing in the square.
-[line break][line break]An elder tells you that a young woman who cannot bear children has made a request to Obasinjom to be cured."
+[line break][line break]An elder tells you that [a young woman] who cannot bear children has made a request to Obasinjom to be cured."
 
-Check going north when player is in the village square:
-	say "You are thankful to have seen Obasinjom, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju. You have not seen that type of support in communities to which you belong.[line break][line break]You feel humbled. You came to this country proud, relying on your money and education. However, you have come to realize that relationships and community, generosity and hospitality, are much more powerful forces for good.";
+[Check going north when player is in the village square:]
+Check touching Obasinjom:
+	Try taking Obasinjom instead.
+
+Check taking Obasinjom:
+	say "You reach out to touch Obasinjom's cloak. You feel a strange tingling sensation ...
+[line break][line break]Finally, you were able to see Obasinjom! This is certainly good for your research, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju.[line break][line break]You feel humbled. You came to this country proud, smart, relying on your money and education. Those were your strengths. Those were your source of power back home. However in this community, you see that relationships and community, generosity and hospitality, are the powerful forces for good.";
 	end the story.
 
 Mr Tabe's house is a room.
@@ -224,8 +237,21 @@ The description of Obasinjom is "Obasinjom is a spirit, but from time to time he
 
 Section 6 - A crowd
 
-A crowd is in the village square.
-The description of the crowd is "It seems like the whole village is here, mingling around the edge of the square. Some people are dancing. Some people are drinking. Everyone talks excitedly while they wait to hear [Obasinjom]'s pronouncement."
+A crowd is a thing.
+The crowd is in the village square.
+The description of the crowd is "It seems like the whole village is here, mingling around the edge of the square. Some people are dancing. Some people are drinking. Everyone talks excitedly while they wait to hear [Obasinjom]'s pronouncement. You are surprised at the level of empathy and support for the young woman who has come to [Obasinjom] for help. You have never seen the community in your home town come together like this to support someone."
+
+Section 7 - A young woman
+
+A young woman is a person.
+The young woman is in the village square.
+The description of the young woman is "You see a young woman, standing apart from the crowd, facing Obasinjom, who is in the middle of the square. She is in her late 20s, maybe about your age. She is wearing a beautiful waxprint wrappa skirt with a matching top and headscarf. She is very emotional. She has been crying. A crowd of women is standing nearby. They are also very emotional and seem to be encouraging the young woman."
+
+Section 8 - a hint
+
+A hint is a thing.
+The hint is in the village square.
+The description of the hint is "This story is still a work in process ... Examine the other objects in [the village square], then [bold type]touch Obasinjom[roman type] to end the game."
 
 Chapter 3 - Rules
 
@@ -309,4 +335,7 @@ Test long-sad-path with "s / e / s / n / w / n / n"
 Test pelt with "s / e / s / s / x pelt / take pelt / i"
 
 [Navigates to Bachuo Ntai]
-Test BN with "s / e / s / s"
+Test BN with "sw / s / e / s / s"
+
+[Navigates to Tinto village square]
+Test Tinto with "sw / s / e / s / s / s / s / e / s / s"
