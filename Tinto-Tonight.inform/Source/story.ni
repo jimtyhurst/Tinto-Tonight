@@ -20,8 +20,8 @@ Include Keyword Interface by Aaron Reed.
 
 Table of User Styles (continued)
 style name	color
-special-style-1	"#000fff" [ blue ]
-special-style-2	"#008000" [ green ]
+special-style-1	"#000fff" [blue things]
+special-style-2	"#008000" [green compass directions]
 
 Release along with an interpreter, the library card, the introductory booklet, the introductory postcard, and the source text.
 [After release, you need to update 'interpeter/glkote.css' manually, in order for the 'Keyword Interface' to display correctly in a browser. Replace the empty definitions for these two styles that appear at the end of the file:
@@ -175,7 +175,6 @@ The description of the village square is "A large open space in the middle of th
 [line break][line break][Obasinjom] is dancing in the square.
 [line break][line break]An elder tells you that [a young woman] who cannot bear children has made a request to Obasinjom to be cured."
 
-[Check going north when player is in the village square:]
 Check touching Obasinjom:
 	Try taking Obasinjom instead.
 
@@ -313,6 +312,7 @@ The description of Acknowledgments is "[bold type]Disclaimer[roman type]
 [line break]https://multcolib.bibliocommons.com/v2/record/S152C2540808
 [line break][line break]Keyword Interface by Aaron Reed. https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
 [line break][line break]Basic Screen Effects by Emily Short. Installed Extension.
+[line break][line break]Glulx Text Effects by Emily Short. Installed Extension.
 [line break][line break]Modified Exit by Emily Short. https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x
 [line break][line break][bold type]Thanks[roman type]
 [line break]This story was written while taking the course CS 410 Topics in Interactive Fiction at Portland State University.
@@ -323,16 +323,17 @@ The description of Acknowledgments is "[bold type]Disclaimer[roman type]
 Chapter 5 - Tests
 
 [Expects successful trip to Tinto.]
-Test happy-path with "x acknowledgments / x me / i / n / s / s / x Mr Agbor / e / s / s / s / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x crowd / n"
+Test happy-path with "x acknowledgments / x me / i / sw / n / s / s / x Mr Agbor / e / s / s / s / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x woman / x crowd / touch Obasinjom"
 
 [Expects failure: player did not take the taxi.]
-Test short-sad-path with "n / s / s / n / n"
+Test short-sad-path with "sw / n / s / s / n / n"
 
 [Expects failure: player returned home after flat tire.]
-Test long-sad-path with "s / e / s / n / w / n / n"
+[TODO: Game did not end upon returning to your house?!?]
+Test long-sad-path with "sw / s / e / s / s / s / n / n / n / w / n / n"
 
 [Expects player has added courage to their inventory.]
-Test pelt with "s / e / s / s / x pelt / take pelt / i"
+Test pelt with "sw / s / e / s / s / x pelt / take pelt / i"
 
 [Navigates to Bachuo Ntai]
 Test BN with "sw / s / e / s / s"
