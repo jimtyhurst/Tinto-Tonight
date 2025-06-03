@@ -2,7 +2,7 @@
 # so they should not be committed in the source code repository.
 *.inform/
 !*.inform/Source/story.ni
-*.materials/Release/
+# *.materials/Release/
 
 # macOS system storage files
 .DS_Store
