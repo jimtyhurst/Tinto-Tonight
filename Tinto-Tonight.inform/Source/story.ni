@@ -48,13 +48,13 @@ Chapter 1 - Setting
 Section 1 - Cameroon
 
 Cameroon is a room.
-The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[line break][line break]Start your adventure in the [southwest] province."
+The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[paragraph break]Start your adventure in the [southwest] province."
 
 Section 2 - Mamfe
 
 Mamfe is a room.
 Mamfe is southwest of Cameroon.
-The description of Mamfe is "Your home base is Mamfe, the capital of the Manyu Division in the Southwest Province. It feels very crowded for a town of only 40,000 people. You prefer your work in the field, talking to people in the small rural villages. You come back here to get supplies and to get your mail.[line break][line break]Your house is on the [north] edge of town. The market is on the [south] edge of town."
+The description of Mamfe is "Your home base is Mamfe, the capital of the Manyu Division in the Southwest Province. It feels very crowded for a town of only 40,000 people. You prefer your work in the field, talking to people in the small rural villages. You come back here to get supplies and to get your mail.[paragraph break]Your house is on the [north] edge of town. The market is on the [south] edge of town."
 
 Your house is a room.
 It is north of Mamfe.
@@ -77,8 +77,8 @@ It is south of Mamfe.
 The description of the market is 
 "A typical West African market. There are many small vendors, where each one sells one thing, like beans, rice, local vegetables, or dried fish. [The taxi park] is to the [east]. [Mamfe] town is to the [north].
 [if the market has not been visited]
-[line break][line break]You meet [Mr Agbor], the Rural Councillor, who always asks about your work. You are delighted when he tells you there will be an Obasinjom ceremony at Tinto [italic type]tonight[roman type]. Tonight!?!
-[line break][line break]You hesitate ... Can you get to Tinto before nightfall? [Mr Agbor] encourages you to go to the taxi park immediately. But you do not have any extra clothes with you. There is no time to go back home to pick up anything. Anyway, it seems a little risky; a little scary even. You hate making decisions like this at the spur of the moment! What are you going to do? ... go [east] to go to Tinto? ... go [north] to go home?
+[paragraph break]You meet [Mr Agbor], the Rural Councillor, who always asks about your work. You are delighted when he tells you there will be an Obasinjom ceremony at Tinto [italic type]tonight[roman type]. Tonight!?!
+[paragraph break]You hesitate ... Can you get to Tinto before nightfall? [Mr Agbor] encourages you to go to the taxi park immediately. But you do not have any extra clothes with you. There is no time to go back home to pick up anything. Anyway, it seems a little risky; a little scary even. You hate making decisions like this at the spur of the moment! What are you going to do? ... go [east] to go to Tinto? ... go [north] to go home?
 [end if]".
 
 The taxi park is a room.
@@ -86,7 +86,7 @@ It is east of the market.
 The description of the taxi park is "There are only a couple bush taxis at this time of day.
 Go [south] on [the Kumba road] or return [west] to [the market].
 [if the taxi park has not been visited]
-[line break][line break]Most taxis leave in the morning, so you are lucky to catch one in the afternoon: You find a taxi named [bold type]Big Boss[roman type] that is leaving as soon as they get one more passenger. You can be that passenger! You still hesitate, not sure if you really want to go. Come on ... [bold type]Get in the taxi[roman type] and head [south]!
+[paragraph break]Most taxis leave in the morning, so you are lucky to catch one in the afternoon: You find a taxi named [bold type]Big Boss[roman type] that is leaving as soon as they get one more passenger. You can be that passenger! You still hesitate, not sure if you really want to go. Come on ... [bold type]Get in the taxi[roman type] and head [south]!
 [otherwise]You see a taxi named [bold type]Mama Okang[roman type]. You wonder if there is any research on the types of names given to bush taxis.
 [end if]".
 
@@ -101,14 +101,14 @@ outside the taxi park is a room.
 It is south of the taxi park.
 The description of outside the taxi park is "[first time]As always, the small van is crowded with people of all ages. Thankfully, the chickens were placed in the rack on top of the van.
 [only]It is a rough ride on the unpaved road with deep ruts in the red clay.
-[line break][line break]Go [north] to [Mamfe] or [south] to the crossroads."
+[paragraph break]Go [north] to [Mamfe] or [south] to the crossroads."
 
 Section 4 - Bachuo Ntai
 
 Bachuo Ntai is a room.
 It is south of outside the taxi park.
 The description of Bachuo Ntai is "The taxi stops in Bachuo Ntai to drop off a passenger and their cargo. You notice that you are stopped across from the [Ekpe Society Hall], which has a [leopard pelt] above the door.
-[line break][line break]Go [north] to return home or [south] to the crossroads.".
+[paragraph break]Go [north] to return home or [south] to the crossroads.".
 
 The Ekpe Society Hall is a thing in Bachuo Ntai.
 The Ekpe Society Hall is fixed in place.
@@ -146,8 +146,8 @@ Section 5 - The road to Kumba
 the road to Kumba is a room.
 It is south of Bachuo Ntai.
 The description of the road to Kumba is "[one of]Oh, no! A flat tire. This is bad. The taxi does not have a spare. You could wait for someone to return to Mamfe to fix the tire and return. Or you can walk to [Tinto].
-[line break][line break]A car approaches going north to Mamfe. They stop to help. It is [Stefan], the Swiss civil engineer. He offers to take one person and the bad tire [north] to Mamfe. He also has room for you, but he encourages you to walk to Tinto. He says it is only another 2 km [south] to [the crossroads] and then another 5 km from there to [Tinto].
-[line break][line break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... [bold type]exit the taxi[roman type] and walk [south]. Regardless, don't dawdle. It is getting late.
+[paragraph break]A car approaches going north to Mamfe. They stop to help. It is [Stefan], the Swiss civil engineer. He offers to take one person and the bad tire [north] to Mamfe. He also has room for you, but he encourages you to walk to Tinto. He says it is only another 2 km [south] to [the crossroads] and then another 5 km from there to [Tinto].
+[paragraph break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... [bold type]exit the taxi[roman type] and walk [south]. Regardless, don't dawdle. It is getting late.
 [or]Go [north] to return home or [south] to the crossroads.[stopping]"
 
 Section 6 - The crossroads
@@ -172,15 +172,16 @@ The description of Tinto is "Tinto is a small village, stretched out along the r
 
 the village square is a room. It is south of Tinto.
 The description of the village square is "A large open space in the middle of the village where everyone gathers for meetings and special events. Most of the houses in the village are to the [north] of the square.
-[line break][line break][Obasinjom] is dancing in the square.
-[line break][line break]An elder tells you that [a young woman] who cannot bear children has made a request to Obasinjom to be cured."
+[paragraph break][Obasinjom] is dancing in the square.
+[paragraph break]An elder tells you that [a young woman] who cannot bear children has made a request to Obasinjom to be cured."
 
 Check touching Obasinjom:
 	Try taking Obasinjom instead.
 
 Check taking Obasinjom:
 	say "You reach out to touch Obasinjom's cloak. You feel a strange tingling sensation ...
-[line break][line break]Finally, you were able to see Obasinjom! This is certainly good for your research, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju.[line break][line break]You feel humbled. You came to this country proud, smart, relying on your money and education. Those were your strengths. Those were your source of power back home. However in this community, you see that relationships and community, generosity and hospitality, are the powerful forces for good.";
+[paragraph break]Finally, you were able to see Obasinjom! This is certainly good for your research, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju.
+[paragraph break]You feel humbled. You came to this country proud, smart, relying on your money and education. Those were your strengths. Those were your source of power back home. However in this community, you see that relationships and community, generosity and hospitality, are the powerful forces for good.";
 	end the story.
 
 Mr Tabe's house is a room.
@@ -298,26 +299,32 @@ After going south:
 		Now Stefan is off-stage;
 	Continue the action.
 
+Check going west:
+	If player is in the taxi park and player is in the bush taxi:
+		Try exiting;
+		Try going south instead;
+	Continue the action.
+
 Chapter 4 - Acknowledgments
 
 Acknowledgments are in Cameroon.
 Understand "Acknowledgements" as Acknowledgments.
 The description of Acknowledgments is "[bold type]Disclaimer[roman type]
 [line break]This story is a work of fiction. References to actual villages, towns, and cities are used fictiously. Other names, characters, places, and events are products of the author's imagination. Any resemblance to actual events or places or persons, living or dead, is entirely coincidental.
-[line break][line break][bold type]Source Code[roman type]
+[paragraph break][bold type]Source Code[roman type]
 [line break]https://github.com/jimtyhurst/Tinto-Tonight
-[line break][line break][bold type]References[roman type]
+[paragraph break][bold type]References[roman type]
 [line break]The aphorism, '[italic type]Whenever we choose one path, we must forgo other paths, so any choice may bring unavoidable regret.[roman type]', is taken from:
 [line break]Gretchen Rubin. 2025. Secrets of Adulthood: Simple Truths for Our Complex Lives.
 [line break]https://multcolib.bibliocommons.com/v2/record/S152C2540808
-[line break][line break]Keyword Interface by Aaron Reed. https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
-[line break][line break]Basic Screen Effects by Emily Short. Installed Extension.
-[line break][line break]Glulx Text Effects by Emily Short. Installed Extension.
-[line break][line break]Modified Exit by Emily Short. https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x
-[line break][line break][bold type]Thanks[roman type]
+[paragraph break]Keyword Interface by Aaron Reed. https://github.com/i7/extensions/blob/10.1/Aaron%20Reed/Keyword%20Interface-v9.i7x
+[paragraph break]Basic Screen Effects by Emily Short. Installed Extension.
+[paragraph break]Glulx Text Effects by Emily Short. Installed Extension.
+[paragraph break]Modified Exit by Emily Short. https://github.com/i7/extensions/blob/10.1/Emily%20Short/Modified%20Exit-v6.i7x
+[paragraph break][bold type]Thanks[roman type]
 [line break]This story was written while taking the course CS 410 Topics in Interactive Fiction at Portland State University.
-[line break][line break]https://docs.google.com/document/d/e/2PACX-1vQ9mYZtYJteghqAVQTyvXn0Gimd-K3Pt9M8J64DMvtQua21kJR4w47wzaNC-rAfGMr1Q_eyVyOAf4fJ/pub
-[line break][line break]Many thanks to the professors and other students for offering helpful advice and criticism as I was writing the story. I am still not completely happy with it, but it is [italic type]much[roman type] better than it would have been without their help.
+[paragraph break]https://docs.google.com/document/d/e/2PACX-1vQ9mYZtYJteghqAVQTyvXn0Gimd-K3Pt9M8J64DMvtQua21kJR4w47wzaNC-rAfGMr1Q_eyVyOAf4fJ/pub
+[paragraph break]Many thanks to the professors and other students for offering helpful advice and criticism as I was writing the story. I am still not completely happy with it, but it is [italic type]much[roman type] better than it would have been without their help.
 ".
 
 Chapter 5 - Tests
