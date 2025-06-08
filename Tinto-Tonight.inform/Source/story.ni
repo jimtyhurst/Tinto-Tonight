@@ -50,6 +50,10 @@ Section 1 - Cameroon
 Cameroon is a room.
 The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[paragraph break]Start your adventure in the [southwest] province."
 
+A magic-infused artifact is a kind of thing.
+A magic-infused artifact can be either wearable or not wearable.
+Magic-infused artifacts are usually not wearable.
+
 Section 2 - Mamfe
 
 Mamfe is a room.
@@ -58,12 +62,13 @@ The description of Mamfe is "Your home base is Mamfe, the capital of the Manyu D
 
 Your house is a room.
 It is north of Mamfe.
-The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need to get back to visiting villages. Most people are [italic type]not[roman type] willing to talk about personal beliefs with outsiders like you, but you have made a few friends, which has opened a few opportunities. Right now you need some food. It is just a short walk [south] to [the market].
+The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need to get back to visiting villages. Most people are [italic type]not[roman type] willing to talk about personal beliefs with outsiders like you, but you have made a few friends, which has opened a few opportunities. Right now you need some food.
 [otherwise if your house has been visited and the market has not been visited]
 I thought you were going to [the market]?!? It is just a short walk [south] to [the market].
 [otherwise if the market has been visited and the village square has not been visited]Your house is as hot and humid as ever.
 [otherwise if the village square has been visited]Welcome home! You were finally able to see Obasinjom.
-[end if]".
+[end if]
+[paragraph break][Egbekaw] village is to the [north]. Walk [south] to [the market]."
 
 The kitchen shelf is a container in your house.
 The description of the kitchen shelf is "Unfortunately, there is not much here."
@@ -95,7 +100,39 @@ The description of the bush taxi is "As always, the taxi is overloaded, which ma
 Understand "Big Boss" as the bush taxi.
 Understand "Mama Okong" as the bush taxi.
 
-Section 3 - Outside the taxi park
+Section 3 - Egbekaw
+
+Egbekaw is a room.
+It is north of your house.
+It is northwest of the market.
+The description of Egbekaw is "Houses are lined up along both sides of the road, as with other Banyang villages.[paragraph break]There is a cut-short path leading [southeast] to the Mamfe [market]. Take the road [south] to return to [your house]."
+
+The Town Hall is a thing in Egbekaw.
+The Town Hall is fixed in place.
+The description of the Town Hall is "There is a [crocodile skull] mounted over the doors. You were in this town hall once when you first arrived in the Mamfe area. You stopped by to tell people about your work and to ask for help. There was a meeting taking place and they invited you in to talk and gave you a mug of palm wine."
+
+A crocodile skull is a magic-infused artifact in Egbekaw.
+The description of a crocodile skull is "You have been told that there are no longer crocodiles in the Manyu River, but you have seen a few skulls during your travels in the Manyu Division. You have heard that people who have a crocodile as their spirit animal demonstrate personal strength in difficult circumstances. You don't believe in spirit animals, but we could all use a bit more emotional strength and physical strength, right?".
+
+strength is a thing.
+The description of strength is "You feel stronger, healthier after touching the crocodile skull. Maybe you can avoid getting malaria again. Cool!".
+
+After dropping strength:
+	say "You feel a little weaker. You feel a twinge of pain in your stomach.";
+	now the strength is off-stage.
+
+Instead of wearing the crocodile skull:
+	Say "Everyone knows there is a lot of magic in that crocodile skull. As an outsider, you should not be trying to wear it."
+
+Instead of an actor taking a crocodile skull:
+	Say "You reach out and touch the crocodile skull. You feel a strange tingling sensation ... You stand a little straighter and you feel a little stronger!";
+	Now the player has strength instead.
+
+Instead of an actor touching a crocodile skull:
+	Say "You reach out and touch the crocodile skull. You feel a strange tingling sensation ... You stand a little straighter and you feel a little stronger!";
+	Now the player has strength instead.
+
+Section 4 - Outside the taxi park
 
 outside the taxi park is a room.
 It is south of the taxi park.
@@ -103,7 +140,7 @@ The description of outside the taxi park is "[first time]As always, the small va
 [only]It is a rough ride on the unpaved road with deep ruts in the red clay.
 [paragraph break]Go [north] to [Mamfe] or [south] to the crossroads."
 
-Section 4 - Bachuo Ntai
+Section 5 - Bachuo Ntai
 
 Bachuo Ntai is a room.
 It is south of outside the taxi park.
@@ -114,9 +151,6 @@ The Ekpe Society Hall is a thing in Bachuo Ntai.
 The Ekpe Society Hall is fixed in place.
 The description of the Ekpe Society Hall is "The Ekpe Society, i.e. Leopard Society, is a secret society that provides some governance structure and justice in Banyang villages. Their power is derived from a spirit in the forest, which is somehow related to a leopard. Last week, you were lucky to see one of their ceremonies. The men wore red hats and carried something like a stretcher with a covered box on top. They carried it around the village while drumming and dancing. There was a noise coming from the inside, like the yowling or roaring of a leopard."
 
-A magic-infused artifact is a kind of thing.
-A magic-infused artifact can be either wearable or not wearable.
-Magic-infused artifacts are usually not wearable.
 A leopard pelt is a magic-infused artifact in Bachuo Ntai.
 The description of a leopard pelt is "You have heard that people who have a leopard as their spirit animal gain great courage. You don't believe in spirit animals, but we could all use a bit more courage, right?".
 courage is a thing.
@@ -141,7 +175,7 @@ Instead of an actor touching a leopard pelt:
 	Say "You reach out and touch the leopard pelt. You feel a strange tingling sensation ... You feel a boost of courage!";
 	Now the player has courage instead.
 
-Section 5 - The road to Kumba
+Section 6 - The road to Kumba
 
 the road to Kumba is a room.
 It is south of Bachuo Ntai.
@@ -150,21 +184,21 @@ The description of the road to Kumba is "[one of]Oh, no! A flat tire. This is ba
 [paragraph break]You hesitate. Do you really want to walk on an isolated dirt road through the middle of the forest when it is getting close to dark? It would be easy to ride [north] to return home. Or ... [bold type]exit the taxi[roman type] and walk [south]. Regardless, don't dawdle. It is getting late.
 [or]Go [north] to return home or [south] to the crossroads.[stopping]"
 
-Section 6 - The crossroads
+Section 7 - The crossroads
 
 the crossroads is a room.
 It is south of the road to Kumba.
 It is west of the road to Tali.
 The description of the crossroads is "This is where the road to Tali branches from the road to Kumba. There is nothing here at the crossroads. It is just a place along the Mamfe-Kumba road where the bush taxis drop people off to trek to villages to the [east]. Go [north] to return to [Mamfe]."
 
-Section 7 - The road to Tali
+Section 8 - The road to Tali
 
 The road to Tali is a room.
 It is east of the crossroads.
 It is north of Tinto.
 The description of the road to Tali is "A narrow dirt road with large ruts in some places. Most seasons, it gets graded after the rainy season, so it is relatively easy to travel most of the year. The forest is tall and dense along the sides of the road, except for the areas that have been cleared for houses. Most of the houses in [Tinto] are on the [south] side of the road. Or return [west] to the [crossroads]."
 
-Section 8 - Tinto
+Section 9 - Tinto
 
 Tinto is a room.
 It is south of the road to Tali.
@@ -188,7 +222,7 @@ Mr Tabe's house is a room.
 It is east of Tinto.
 The description of Mr Tabe's house is "A concrete house with a tole roof. There is an empty room where guests can sleep. Mr Tabe has offered to let you sleep there tonight. The main part of Tinto is [west] of here."
 
-Section 9 - The forest
+Section 10 - The forest
 
 The Forest is a region.
 Tinto, The village square, Mr Tabe's house, the road to Tali, and the crossroads are in the Forest.
