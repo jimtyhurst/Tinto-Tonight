@@ -296,23 +296,20 @@ The description of the hint is "This story is still a work in process ... Examin
 
 Chapter 3 - Rules
 
-[
-Every turn when the player is in your house:
-	If the market has been visited and the village square has not been visited:
-		say "It is frustrating that you could not see Obasinjom. You wonder whether a spirit animal could help you next time.";
-		end the story.
-]
+Section 1 - Health Score
 
 Every turn:
 	Decrement the Health Score of the player.
 
-Every turn when eating the Chococam chocolate bar:
+Every turn when eating a Chococam chocolate bar:
 	Increase the Health Score of the player by 5.
-[
-Every turn when the health score of the player is < 1:
-	Say "You do not have enough strength to go on ...";
-	End the story.
-]
+	
+After going to a room:
+	If the Health Score of the Player < 1:
+		End the story saying "You do not have enough strength to go on. You wonder whether a spirit animal could help you next time.";
+	Continue the action.
+
+Section 2 - Transitions
 
 Before going north:
 	If player is in Outside The Taxi Park and the bush taxi is not in The Taxi Park and player is not in the bush taxi:
@@ -341,7 +338,10 @@ Check going south:
 	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
 		Try entering the bush taxi;
 		Try going south instead;
-	If player is in the road to Kumba and the bush taxi is in the road to Kumba and player is in the bush taxi:
+	If player is in the road to Kumba and the player does not have courage:
+		End the story saying "You do not have enough courage to go on. You wonder whether a spirit animal could help you next time.";
+	[TODO: This next condition does not apply properly ... Player stays in the taxi, but I want them to be removed from the taxi.]
+	If the Player is in the road to Kumba and the Player is in the bush taxi:
 		Say "You need to walk from here.";
 		Try exiting;
 		Say "You walk alone, leaving the taxi behind.";
@@ -356,7 +356,7 @@ After going south:
 Check going west:
 	If player is in the taxi park and player is in the bush taxi:
 		Try exiting;
-		Try going south instead;
+		Try going west instead;
 	Continue the action.
 
 Chapter 4 - Acknowledgments
