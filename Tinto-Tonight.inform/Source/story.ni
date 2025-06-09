@@ -50,7 +50,7 @@ Chapter 1 - Setting
 Section 1 - Cameroon
 
 Cameroon is a room.
-The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[paragraph break]Start your adventure in the [southwest] province."
+The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[paragraph break]Continue your studies in the [southwest] province."
 
 A magic-infused artifact is a kind of thing.
 A magic-infused artifact can be either wearable or not wearable.
@@ -67,8 +67,7 @@ It is north of Mamfe.
 The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need to get back to visiting villages. Most people are [italic type]not[roman type] willing to talk about personal beliefs with outsiders like you, but you have made a few friends, which has opened a few opportunities. Right now you need some food.
 [otherwise if your house has been visited and the market has not been visited]
 I thought you were going to [the market]?!? It is just a short walk [south] to [the market].
-[otherwise if the market has been visited and the village square has not been visited]Your house is as hot and humid as ever.
-[otherwise if the village square has been visited]Welcome home! You were finally able to see Obasinjom.
+[otherwise]Your house is as hot and humid as ever.
 [end if]
 [paragraph break][Egbekaw] village is to the [north]. Walk [south] to [the market]."
 
@@ -77,7 +76,7 @@ The description of the kitchen shelf is "Unfortunately, there is not much here."
 
 A Chococam chocolate bar is an edible thing in the kitchen shelf.
 The description of the chocolate bar is "Not as good quality chocolate as you used to buy in Cambridge, but in addition to supporting the local economy, it is delightful to have a snack that you do not need to cook, especially since your 13 kg butane tank is nearly empty!"
-Report eating the Chococam chocolate bar: say "You need to buy another box of these next time you go to the market!"
+Report eating the Chococam chocolate bar: say "You get a boost of energy ... You should buy another box of these next time you go to the market!" instead.
 
 The market is a room.
 It is south of Mamfe.
@@ -210,17 +209,15 @@ The description of Tinto is "Tinto is a small village, stretched out along the r
 
 the village square is a room. It is south of Tinto.
 The description of the village square is "A large open space in the middle of the village where everyone gathers for meetings and special events. Most of the houses in the village are to the [north] of the square.
-[paragraph break][Obasinjom] is dancing in the square.
-[paragraph break]An elder tells you that [a young woman] who cannot bear children has made a request to Obasinjom to be cured."
+[paragraph break]A juju is dancing in the square.
+[paragraph break]An elder tells you that a young woman who cannot bear children has made a request to Obasinjom to be cured."
 
-Check touching Obasinjom:
-	Try taking Obasinjom instead.
-
-Check taking Obasinjom:
-	say "You reach out to touch Obasinjom's cloak. You feel a strange tingling sensation ...
-[paragraph break]Finally, you were able to see Obasinjom! This is certainly good for your research, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju.
-[paragraph break]You feel humbled. You came to this country proud, smart, relying on your money and education. Those were your strengths. Those were your source of power back home. However in this community, you see that relationships and community, generosity and hospitality, are the powerful forces for good.";
-	end the story.
+[
+ This value is incremented as objects are examined in the village square.
+ Once all objects have been examined, a hint is provided. See the rules below
+]
+The village square has a number called EndingTasks.
+EndingTasks is 0.
 
 Mr Tabe's house is a room.
 It is east of Tinto.
@@ -274,7 +271,7 @@ Section 5 - Obasinjom
 
 Obasinjom is a man.
 Obasinjom is in the village square.
-The description of Obasinjom is "Obasinjom is a spirit, but from time to time he appears and communicates through people. Tonight he has possessed one of the men of Tinto. That man wears a long cloak and a mask. The mask looks like a strange bird with large feathers sticking up on the back of the head, but straw hanging down like hair. The long beak looks like the snout of a crocodile with jagged teeth sticking out."
+The description of Obasinjom is "Obasinjom is dancing in the square. Obasinjom is a spirit, but from time to time he appears and communicates through people. Tonight he has possessed one of the men of Tinto. That man wears a long cloak and a mask. The mask looks like a strange bird with large feathers sticking up on the back of the head, but straw hanging down like hair. The long beak looks like the snout of a crocodile with jagged teeth sticking out."
 
 Section 6 - A crowd
 
@@ -285,14 +282,8 @@ The description of the crowd is "It seems like the whole village is here, mingli
 Section 7 - A young woman
 
 A young woman is a person.
-The young woman is in the village square.
+A young woman is in the village square.
 The description of the young woman is "You see a young woman, standing apart from the crowd, facing Obasinjom, who is in the middle of the square. She is in her late 20s, maybe about your age. She is wearing a beautiful waxprint wrappa skirt with a matching top and headscarf. She is very emotional. She has been crying. A crowd of women is standing nearby. They are also very emotional and seem to be encouraging the young woman."
-
-Section 8 - a hint
-
-A hint is a thing.
-The hint is in the village square.
-The description of the hint is "This story is still a work in process ... Examine the other objects in [the village square], then [bold type]touch Obasinjom[roman type] to end the game."
 
 Chapter 3 - Rules
 
@@ -332,12 +323,14 @@ After going east:
 	Continue the action.
 
 Check going south:
+[
 	If player is in the taxi park and the bush taxi is in the taxi park and player is not in the bush taxi:
 		Try entering the bush taxi;
 		Try going south instead;
 	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
 		Try entering the bush taxi;
 		Try going south instead;
+]
 	If player is in the road to Kumba and the player does not have courage:
 		End the story saying "You do not have enough courage to go on. You wonder whether a spirit animal could help you next time.";
 	[TODO: This next condition does not apply properly ... Player stays in the taxi, but I want them to be removed from the taxi.]
@@ -358,6 +351,24 @@ Check going west:
 		Try exiting;
 		Try going west instead;
 	Continue the action.
+
+Section 3 - Successful ending
+
+Report examining Obasinjom: Increment the EndingTasks of the village square.
+Report examining a crowd: Increment the EndingTasks of the village square.
+Report examining a young woman: Increment the EndingTasks of the village square.
+
+Every turn when EndingTasks of the village square > 2:
+	Say "You want to reach out to [bold type]touch Obasinjom[roman type] ...".
+
+Check touching Obasinjom:
+	Try taking Obasinjom instead.
+
+Check taking Obasinjom:
+	say "You reach out to touch Obasinjom's cloak. You feel a strange tingling sensation ...
+[paragraph break]Finally, you were able to see Obasinjom! This is certainly good for your research, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju.
+[paragraph break]You feel humbled. You came to this country proud, smart, relying on your money and education. Those were your strengths. Those were your source of power back home. However in this community, you see that relationships and community, generosity and hospitality, are the powerful forces for good.";
+	end the story.
 
 Chapter 4 - Acknowledgments
 
@@ -384,14 +395,13 @@ The description of Acknowledgments is "[bold type]Disclaimer[roman type]
 Chapter 5 - Tests
 
 [Expects successful trip to Tinto.]
-Test happy-path with "x acknowledgments / x me / i / sw / n / s / s / x Mr Agbor / e / s / s / s / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x woman / x crowd / touch Obasinjom"
+Test happy-path with "x me / i / sw / n / n / x Town Hall / x crocodile skull / touch crocodile skull / se / x Mr Agbor / e / s / s / x Ekpe Society Hall / x leopard pelt / touch pelt / i / s / exit / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x woman / x crowd / touch Obasinjom"
 
-[Expects failure: player did not take the taxi.]
-Test short-sad-path with "sw / n / s / s / n / n"
+[Expects failure: player does not have enough strength.]
+Test strength-fails with "sw / n / x kitchen shelf / x chocolate bar / n / x Town Hall / x crocodile skull / se / x Mr Agbor / e / x bush taxi / w / nw / s / x kitchen shelf / x chocolate bar / s / s / e / enter taxi / s"
 
-[Expects failure: player returned home after flat tire.]
-[TODO: Game did not end upon returning to your house?!?]
-Test long-sad-path with "sw / s / e / s / s / s / n / n / n / w / n / n"
+[Expects failure: player does not have enough courage.]
+Test courage-fails with "sw / s / e / s / s / s / s"
 
 [Expects player has added courage to their inventory.]
 Test pelt with "sw / s / e / s / s / x pelt / take pelt / i"
@@ -400,4 +410,4 @@ Test pelt with "sw / s / e / s / s / x pelt / take pelt / i"
 Test BN with "sw / s / e / s / s"
 
 [Navigates to Tinto village square]
-Test Tinto with "sw / s / e / s / s / s / s / e / s / s"
+Test Tinto with "sw / n / eat chocolate bar / s / s / e / s / s / touch leopard pelt / s / s / e / s / s"
