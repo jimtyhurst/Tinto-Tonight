@@ -41,7 +41,9 @@ Release along with an interpreter, the library card, the introductory booklet, t
 Use the serial comma.
 
 When play begins:
-	say "'[italic type]Whenever we choose one path,[line break]we must forgo other paths,[line break]so any choice may bring unavoidable regret.'[line break]- Gretchen Rubin[roman type][line break]".
+	say "'[italic type]Whenever we choose one path,[line break]we must forgo other paths,[line break]so any choice may bring unavoidable regret.'[line break]- Gretchen Rubin[roman type][line break]";
+    now the right hand status line is "Health: [Health Score of the Player]".
+
 
 Chapter 1 - Setting
 
@@ -126,10 +128,12 @@ Instead of wearing the crocodile skull:
 
 Instead of an actor taking a crocodile skull:
 	Say "You reach out and touch the crocodile skull. You feel a strange tingling sensation ... You stand a little straighter and you feel a little stronger!";
+	Increase the Health Score of the Player by 50;
 	Now the player has strength instead.
 
 Instead of an actor touching a crocodile skull:
 	Say "You reach out and touch the crocodile skull. You feel a strange tingling sensation ... You stand a little straighter and you feel a little stronger!";
+	Increase the Health Score of the Player by 50;
 	Now the player has strength instead.
 
 Section 4 - Outside the taxi park
@@ -248,6 +252,9 @@ The description of trousers is "You had these trousers made for you when you fir
 Yourself is wearing sturdy sandals.
 The description of the sandals is "These sandals are very comfortable, even when the road turns muddy after a heavy rain."
 
+The player has a number called Health Score.
+The Health Score of the player is 20.
+
 Section 2 - Mr Agbor
 
 Mr Agbor is a man in the market.
@@ -289,10 +296,23 @@ The description of the hint is "This story is still a work in process ... Examin
 
 Chapter 3 - Rules
 
+[
 Every turn when the player is in your house:
 	If the market has been visited and the village square has not been visited:
 		say "It is frustrating that you could not see Obasinjom. You wonder whether a spirit animal could help you next time.";
 		end the story.
+]
+
+Every turn:
+	Decrement the Health Score of the player.
+
+Every turn when eating the Chococam chocolate bar:
+	Increase the Health Score of the player by 5.
+[
+Every turn when the health score of the player is < 1:
+	Say "You do not have enough strength to go on ...";
+	End the story.
+]
 
 Before going north:
 	If player is in Outside The Taxi Park and the bush taxi is not in The Taxi Park and player is not in the bush taxi:
