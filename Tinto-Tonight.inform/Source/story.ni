@@ -212,14 +212,12 @@ The description of the village square is "A large open space in the middle of th
 [paragraph break]A juju is dancing in the square.
 [paragraph break]An elder tells you that a young woman who cannot bear children has made a request to Obasinjom to be cured."
 
-Check touching Obasinjom:
-	Try taking Obasinjom instead.
-
-Check taking Obasinjom:
-	say "You reach out to touch Obasinjom's cloak. You feel a strange tingling sensation ...
-[paragraph break]Finally, you were able to see Obasinjom! This is certainly good for your research, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju.
-[paragraph break]You feel humbled. You came to this country proud, smart, relying on your money and education. Those were your strengths. Those were your source of power back home. However in this community, you see that relationships and community, generosity and hospitality, are the powerful forces for good.";
-	end the story.
+[
+ This value is incremented as objects are examined in the village square.
+ Once all objects have been examined, a hint is provided. See the rules below
+]
+The village square has a number called EndingTasks.
+EndingTasks is 0.
 
 Mr Tabe's house is a room.
 It is east of Tinto.
@@ -356,8 +354,21 @@ Check going west:
 
 Section 3 - Successful ending
 
-After examining a crowd:
-	Say "You want to reach out to [bold type]touch Obasinjom[roman type] ..."
+Report examining Obasinjom: Increment the EndingTasks of the village square.
+Report examining a crowd: Increment the EndingTasks of the village square.
+Report examining a young woman: Increment the EndingTasks of the village square.
+
+Every turn when EndingTasks of the village square > 2:
+	Say "You want to reach out to [bold type]touch Obasinjom[roman type] ...".
+
+Check touching Obasinjom:
+	Try taking Obasinjom instead.
+
+Check taking Obasinjom:
+	say "You reach out to touch Obasinjom's cloak. You feel a strange tingling sensation ...
+[paragraph break]Finally, you were able to see Obasinjom! This is certainly good for your research, but you are even more touched by the outpouring of concern and compassion by the villagers for the young woman who presented herself before the juju.
+[paragraph break]You feel humbled. You came to this country proud, smart, relying on your money and education. Those were your strengths. Those were your source of power back home. However in this community, you see that relationships and community, generosity and hospitality, are the powerful forces for good.";
+	end the story.
 
 Chapter 4 - Acknowledgments
 
@@ -399,4 +410,4 @@ Test pelt with "sw / s / e / s / s / x pelt / take pelt / i"
 Test BN with "sw / s / e / s / s"
 
 [Navigates to Tinto village square]
-Test Tinto with "sw / n / eat chocolate bar / s / s / e / s / s / touch leopard pelt / s / s / e / s / s / x Obasinjom / x woman / x crowd"
+Test Tinto with "sw / n / eat chocolate bar / s / s / e / s / s / touch leopard pelt / s / s / e / s / s"
