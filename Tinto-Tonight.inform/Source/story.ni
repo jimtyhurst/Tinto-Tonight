@@ -331,12 +331,14 @@ After going east:
 	Continue the action.
 
 Check going south:
+[
 	If player is in the taxi park and the bush taxi is in the taxi park and player is not in the bush taxi:
 		Try entering the bush taxi;
 		Try going south instead;
 	If player is in Bachuo Ntai and the bush taxi is in Bachuo Ntai and player is not in the bush taxi:
 		Try entering the bush taxi;
 		Try going south instead;
+]
 	If player is in the road to Kumba and the player does not have courage:
 		End the story saying "You do not have enough courage to go on. You wonder whether a spirit animal could help you next time.";
 	[TODO: This next condition does not apply properly ... Player stays in the taxi, but I want them to be removed from the taxi.]
@@ -385,12 +387,11 @@ Chapter 5 - Tests
 [Expects successful trip to Tinto.]
 Test happy-path with "x me / i / sw / n / n / x Town Hall / x crocodile skull / touch crocodile skull / se / x Mr Agbor / e / s / s / x Ekpe Society Hall / x leopard pelt / touch pelt / i / s / exit / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x woman / x crowd / touch Obasinjom"
 
-[Expects failure: player did not take the taxi.]
-Test short-sad-path with "sw / n / s / s / n / n"
+[Expects failure: player does not have enough strength.]
+Test strength-fails with "sw / n / x kitchen shelf / x chocolate bar / n / x Town Hall / x crocodile skull / se / x Mr Agbor / e / x bush taxi / w / nw / s / x kitchen shelf / x chocolate bar / s / s / e / enter taxi / s"
 
-[Expects failure: player returned home after flat tire.]
-[TODO: Game did not end upon returning to your house?!?]
-Test long-sad-path with "sw / s / e / s / s / s / n / n / n / w / n / n"
+[Expects failure: player does not have enough courage.]
+Test courage-fails with "sw / s / e / s / s / s / s"
 
 [Expects player has added courage to their inventory.]
 Test pelt with "sw / s / e / s / s / x pelt / take pelt / i"
@@ -399,4 +400,4 @@ Test pelt with "sw / s / e / s / s / x pelt / take pelt / i"
 Test BN with "sw / s / e / s / s"
 
 [Navigates to Tinto village square]
-Test Tinto with "sw / s / e / s / s / s / s / e / s / s"
+Test Tinto with "sw / n / eat chocolate bar / s / s / e / s / s / touch leopard pelt / s / s / e / s / s"
