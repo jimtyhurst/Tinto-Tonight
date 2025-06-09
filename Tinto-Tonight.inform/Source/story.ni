@@ -50,7 +50,7 @@ Chapter 1 - Setting
 Section 1 - Cameroon
 
 Cameroon is a room.
-The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[paragraph break]Start your adventure in the [southwest] province."
+The description of Cameroon is "You have been up country for six months, making great progress with your ethnographic studies. This week you were happy to meet a few people who were willing to tell you about their spirit animals. You are still hoping to see an Obasinjom ceremony, but they are rare.[paragraph break]Continue your studies in the [southwest] province."
 
 A magic-infused artifact is a kind of thing.
 A magic-infused artifact can be either wearable or not wearable.
@@ -67,8 +67,7 @@ It is north of Mamfe.
 The description of your house is "[if your house has not been visited and the market has not been visited]A simple concrete block house with a tole roof. You need to get back to visiting villages. Most people are [italic type]not[roman type] willing to talk about personal beliefs with outsiders like you, but you have made a few friends, which has opened a few opportunities. Right now you need some food.
 [otherwise if your house has been visited and the market has not been visited]
 I thought you were going to [the market]?!? It is just a short walk [south] to [the market].
-[otherwise if the market has been visited and the village square has not been visited]Your house is as hot and humid as ever.
-[otherwise if the village square has been visited]Welcome home! You were finally able to see Obasinjom.
+[otherwise]Your house is as hot and humid as ever.
 [end if]
 [paragraph break][Egbekaw] village is to the [north]. Walk [south] to [the market]."
 
@@ -77,7 +76,7 @@ The description of the kitchen shelf is "Unfortunately, there is not much here."
 
 A Chococam chocolate bar is an edible thing in the kitchen shelf.
 The description of the chocolate bar is "Not as good quality chocolate as you used to buy in Cambridge, but in addition to supporting the local economy, it is delightful to have a snack that you do not need to cook, especially since your 13 kg butane tank is nearly empty!"
-Report eating the Chococam chocolate bar: say "You need to buy another box of these next time you go to the market!"
+Report eating the Chococam chocolate bar: say "You get a boost of energy ... You should buy another box of these next time you go to the market!" instead.
 
 The market is a room.
 It is south of Mamfe.
@@ -384,7 +383,7 @@ The description of Acknowledgments is "[bold type]Disclaimer[roman type]
 Chapter 5 - Tests
 
 [Expects successful trip to Tinto.]
-Test happy-path with "x acknowledgments / x me / i / sw / n / s / s / x Mr Agbor / e / s / s / s / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x woman / x crowd / touch Obasinjom"
+Test happy-path with "x me / i / sw / n / n / x Town Hall / x crocodile skull / touch crocodile skull / se / x Mr Agbor / e / s / s / x Ekpe Society Hall / x leopard pelt / touch pelt / i / s / exit / x Stefan / s / e / s / x Mr Tabe / s / x Obasinjom / x woman / x crowd / touch Obasinjom"
 
 [Expects failure: player did not take the taxi.]
 Test short-sad-path with "sw / n / s / s / n / n"
