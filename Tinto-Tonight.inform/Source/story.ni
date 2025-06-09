@@ -209,8 +209,8 @@ The description of Tinto is "Tinto is a small village, stretched out along the r
 
 the village square is a room. It is south of Tinto.
 The description of the village square is "A large open space in the middle of the village where everyone gathers for meetings and special events. Most of the houses in the village are to the [north] of the square.
-[paragraph break][Obasinjom] is dancing in the square.
-[paragraph break]An elder tells you that [a young woman] who cannot bear children has made a request to Obasinjom to be cured."
+[paragraph break]A juju is dancing in the square.
+[paragraph break]An elder tells you that a young woman who cannot bear children has made a request to Obasinjom to be cured."
 
 Check touching Obasinjom:
 	Try taking Obasinjom instead.
@@ -273,7 +273,7 @@ Section 5 - Obasinjom
 
 Obasinjom is a man.
 Obasinjom is in the village square.
-The description of Obasinjom is "Obasinjom is a spirit, but from time to time he appears and communicates through people. Tonight he has possessed one of the men of Tinto. That man wears a long cloak and a mask. The mask looks like a strange bird with large feathers sticking up on the back of the head, but straw hanging down like hair. The long beak looks like the snout of a crocodile with jagged teeth sticking out."
+The description of Obasinjom is "Obasinjom is dancing in the square. Obasinjom is a spirit, but from time to time he appears and communicates through people. Tonight he has possessed one of the men of Tinto. That man wears a long cloak and a mask. The mask looks like a strange bird with large feathers sticking up on the back of the head, but straw hanging down like hair. The long beak looks like the snout of a crocodile with jagged teeth sticking out."
 
 Section 6 - A crowd
 
@@ -284,14 +284,8 @@ The description of the crowd is "It seems like the whole village is here, mingli
 Section 7 - A young woman
 
 A young woman is a person.
-The young woman is in the village square.
+A young woman is in the village square.
 The description of the young woman is "You see a young woman, standing apart from the crowd, facing Obasinjom, who is in the middle of the square. She is in her late 20s, maybe about your age. She is wearing a beautiful waxprint wrappa skirt with a matching top and headscarf. She is very emotional. She has been crying. A crowd of women is standing nearby. They are also very emotional and seem to be encouraging the young woman."
-
-Section 8 - a hint
-
-A hint is a thing.
-The hint is in the village square.
-The description of the hint is "This story is still a work in process ... Examine the other objects in [the village square], then [bold type]touch Obasinjom[roman type] to end the game."
 
 Chapter 3 - Rules
 
@@ -360,6 +354,11 @@ Check going west:
 		Try going west instead;
 	Continue the action.
 
+Section 3 - Successful ending
+
+After examining a crowd:
+	Say "You want to reach out to [bold type]touch Obasinjom[roman type] ..."
+
 Chapter 4 - Acknowledgments
 
 Acknowledgments are in Cameroon.
@@ -400,4 +399,4 @@ Test pelt with "sw / s / e / s / s / x pelt / take pelt / i"
 Test BN with "sw / s / e / s / s"
 
 [Navigates to Tinto village square]
-Test Tinto with "sw / n / eat chocolate bar / s / s / e / s / s / touch leopard pelt / s / s / e / s / s"
+Test Tinto with "sw / n / eat chocolate bar / s / s / e / s / s / touch leopard pelt / s / s / e / s / s / x Obasinjom / x woman / x crowd"
